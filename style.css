@@ -198,7 +198,7 @@ button:hover {
   
         img {
           max-height: 100%;
-          object-fit: contain;
+          max-width: 100%;
           object-position: center;
         }
   
@@ -563,5 +563,8 @@ h1 {
   max-height: 40%;
 
 }
+    a {
+  color:#3F3F3F;
+    }
 }
 

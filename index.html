@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="John Doe">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+        <body>
+
+        <div id = "container"></div>
+            <div id = "text">
+                <p id = "paragraph"> Oggi il sole splende, prendi il secchio e mettiti comodo,
+                    raccoglieremo il latte pi&#250 fresco dalla nostra amica mucca </p>
+                <p class = "instruction" id = "instruction"> seleziona gli oggetti di cui hai bisogno </p>
+                <p class = "instruction2" id = "instruction2"> seleziona lo strumento adatto </p>
+                <p class = "instruction3" id = "instruction3"> seleziona il FRANGICAGLIATA </p>
+            </div>
+            <div id = "title">
+                <h1> IL FORMAGGIO </h1>
+            </div>
+<!--------------------------------------------------------- Step 1 ---------------------------------------------->           
+            <div id = "step1" style = "display:none;">
+            <div class = "row">
+                    <div class="column1"><img src="assets/img/mucca.png" alt="mucca"></div>
+                    <div class="column" id="check1"><img src="assets/img/sgabello.png" alt="sgabello" onclick = "select1()"></div>
+                    <div class="column" id="check2"> <img src="assets/img/ombrello.png" alt="ombrello" onclick = "select2()"></div>
+                    <div class="column" id="check3"><img src="assets/img/secchio.png" alt="secchio" onclick = "select3()"></div>
+            </div>
+            </div>
+<!--------------------------------------------------------- Step 2 ---------------------------------------------->
+            <div class = "img_center" id = "secchio_latte"><img height = "200px" src="assets/img/secchio_latte.png" alt="secchio che versa del latte"></div>
+
+            <main class="carousel-container" id ="step2">
+                <div class="carousel">
+                  <div class="item active">
+                    <img src="assets/img/misurino.png" alt="Image 1" />
+                  </div>
+                  <div class="item">
+                    <img src="assets/img/colino.png" alt="Image 2" />
+                  </div>
+                  <div class="item">
+                    <img src="assets/img/brentina.png" alt="Image 3" />
+                  </div>
+                </div>
+                <button class="btn prev">&#8592;</button>
+                <button class="btn next">&#8594;</button>
+              </main>
+<!--------------------------------------------------------- Step 3 ---------------------------------------------->
+              <div id = "step3" style = "display : none;">
+                <div style = "text-align: center;" id = "bilanciere"><img src="assets/img/bilanciere.png" alt="bilanciere per il trasporto del latte" style = "max-width:100%"></div>
+                <div id="canvas_div">
+                  <canvas id="canvas" width="360" height="180" onclick="step3f()" ontouchstart="step3f()"></canvas>
+                  </div>
+                <script src="key_mouse.js"></script>
+                <div class = "row2">
+                <div class="column-left"><img src="assets/img/brentina.png" alt="brentina per il trasporto del latte"></div>
+                <div class="column-right"><img src="assets/img/brentina.png" alt="brentina per il trasporto del latte"></div>
+              </div>
+              </div>
+<!--------------------------------------------------------- Step 4 ---------------------------------------------->              
+              <div id = "step4" style = "display : none;">
+                <div style = "text-align: left;"><img class = "panna" src="assets/img/spannarola.png" alt="spannarola" id = "panna" onclick ="muovi()"></div>
+                <div style = "text-align: center;"><img class = "panna2" src="assets/img/conca.png" alt="conca di legno"></div>
+              
+              </div>
+
+<!--------------------------------------------------------- SCELTA ---------------------------------------------->       
+              <div id = "scelta" style = "display : none;">
+                <div class = "row">
+                <div id = "burro" class="column-left">
+                  <button style = "margin-right: 3vw;" onclick="burro()"> BURRO </button>
+                </div>
+                <div id = "formaggio" class="column-right">
+                  <button style = "margin-left: 3vw;" onclick = "formaggio()"> FORMAGGIO </button>
+                </div>
+              </div>
+              </div>
+<!--------------------------------------------------------- BURRO ---------------------------------------------->     
+
+              <div id = "sceltaburro" style = "display: none;">
+                    <div style="text-align: center;">
+                      <img class = "zangola" src="assets/img/zangola.png" alt="zangola per fare il burro">
+                    </div>
+                    <div style="text-align: center;">
+                      <input type = "text" id = "input" class = "input" placeholder="scrivi qui">
+                    </div>
+                    <div style="text-align: center; margin-top: 3vh;">
+                      <button id ="invio" onclick="getValue()"> INVIA </button>
+                  </div>
+              </div>
+<!--------------------------------------------------------- STAMPO BURRO ---------------------------------------------->     
+              <div id = "stampi" style = "display: none;">
+                <div class = "row">
+                  <div class = "threecolumn">
+                    <img src="assets/img/stampo1.png" alt="stampo per fare il burro" onclick="fineburro()">
+                  </div>
+                  <div class = "threecolumn">
+                    <img src="assets/img/stampo2.png" alt="stampo per fare il burro" onclick="fineburro()">
+                  </div>
+                  <div class = "threecolumn">
+                    <img src="assets/img/stampo3.png" alt="stampo per fare il burro" onclick="fineburro()">
+                  </div>
+                </div>
+              </div>
+
+<!--------------------------------------------------------- FINE BURRO ---------------------------------------------->    
+              <div id = "end-title" style = "text-align: center; display: none;">
+                <h2 id = "congrats"> COMPLIMENTI HAI CREATO IL TUO BURRO! </h2>
+                <img id = "lastimg" src="assets/img/burro.png" alt="mucca" >
+              </div>         
+
+<!--------------------------------------------------------- FORMAGGIO ---------------------------------------------->   
+              <div id = "sceltaformaggio" style = "display: none;">
+                <div class = "row">
+                  <div style = "text-align: center; width: 50%;float :left;">
+                    <img src="assets/img/accendino.png" alt="accendino" id = "accendino" onclick="fire()" >
+                  </div>
+                  <div style = "text-align: center; width: 50%; float :left;">
+                    <img src="assets/img/caldera.png" alt="caldera"  id = "caldera">
+                  </div>
+                </div>
+                <div style="text-align: center; margin-top: 3vh;">
+                      <button id= "avantibtn" onclick="avanti()"> AVANTI </button>
+                  </div>
+              </div>
+
+<!--------------------------------------------------------- FRANGICAGLIATA ---------------------------------------------->  
+                <div id = "cagliata" style = "display: none;">
+                  <div class = "row">
+                    <div class = "threecolumn2" id = "check4">
+                      <img src="assets/img/stampo4.png" alt="stampo per fare il burro" onclick="select4()">
+                    </div>
+                    <div class = "threecolumn2" id = "check5">
+                      <img src="assets/img/pestello.png" alt="stampo per fare il burro" onclick="select5()">
+                    </div>
+                    <div class = "threecolumn2" id = "check6">
+                      <img src="assets/img/frangicagliata.png" alt="stampo per fare il burro" onclick="select6()">
+                    </div>
+                  </div>
+                  <div style="text-align: center; margin-top: 3vh;">
+                    <button id= "avantibtn" onclick="taglia()"> FATTO </button>
+                </div>
+                </div>
+
+<!--------------------------------------------------------- FORMA ---------------------------------------------->  
+                <div id = "forma" style = "display: none;">
+                  <div class = "row">
+                    <div class = "twocolumn">
+                      <img src="assets/img/fascera.png" >
+                    <div style="text-align: center;">
+                      <input type = "text" id = "input2" class = "input" placeholder="scrivi qui">
+                    </div>
+                    </div>
+                    <div class = "twocolumn">
+                      <img src="assets/img/sgocciolatoio.png">
+                    <div style="text-align: center;">
+                      <input type = "text" id = "input3" class = "input" placeholder="scrivi qui">
+                    </div>
+                    </div>
+                  </div>
+                  <div style="text-align: center; margin-top: 3vh;">
+                    <button id= "forma" onclick="getValue2()"> FATTO </button>
+                </div>
+                </div>
+
+<!--------------------------------------------------------- Button ---------------------------------------------->
+            <div id = "button" style="text-align: center;">
+                <button id ="textbutton" onclick = "start()"> INIZIA </button>
+            </div>
+        
+        <div id="overlay" onclick="hide()">
+            <div id ="window" > <div style = "text-align: right; margin: 0;">X</div><p id = "finestra" style = "margin-top: -10px;">Fai attenzione! Per iniziare hai bisogno di un secchio e uno sgabello</p></div>
+        </div>
+
+        </body>
+
+</html>

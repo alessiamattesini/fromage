@@ -1,0 +1,566 @@
+body {
+
+    background-color: #FBFAFA;
+    font-family: "Itim", cursive;
+
+}
+
+p {
+
+    color:#3F3F3F;
+    text-align: center;
+    font-size: 1.7em;
+    padding-top: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;;
+
+}
+
+h1 {
+
+    color: #F0AD4E;
+    text-align: center;
+    font-size: 4em;
+    padding-top: 15vh;
+
+}
+h2 {
+
+  color: #F0AD4E;
+  text-align: center;
+  padding-top: 15vh;
+  margin-bottom: 5vh;;
+
+}
+
+button {
+
+    text-align: center;
+    font-family: "Itim", cursive;
+    font-size: 2em;
+    background-color: #FFDDAD;
+    border: 2px solid;
+    border-color: #3F3F3F;
+    border-radius: 50px;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+
+}
+
+button:hover {
+
+    background-color: #F0AD4E;
+
+}
+
+#text {
+
+    display: none;
+
+}
+
+@keyframes fade{
+
+    0% {opacity : 1;}
+    100% {opacity : 0;}
+}
+
+.instruction {
+
+    color: #F0AD4E;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 1.2em;
+    animation: fade 1.5s infinite alternate;
+
+
+}
+.instruction2 {
+  display: none;
+
+  color: #F0AD4E;
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: 1.2em;
+  animation: fade 1.5s infinite alternate;
+
+
+}
+.instruction3 {
+  display: none;
+
+  color: #F0AD4E;
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: 1.2em;
+  animation: fade 1.5s infinite alternate;
+
+
+}
+
+.column1 {
+    float: left;
+    width: 40%;
+    text-align: center;
+  }
+  .column1 img {
+
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    text-align: center;
+    opacity: 0.5;
+  }
+
+.column img {
+
+    height: 30vh;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+  
+  /* Clear floats after the columns */
+  .row {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 5vh;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  #overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+
+  #window {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2em;
+    text-align: center;
+    color: #3F3F3F;
+    background-color: #FFDDAD;
+    border-radius: 20px;
+    border: 2px solid;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+
+  }
+
+  
+  .carousel-container {
+    width: 60%;
+    margin: auto;
+    position: relative;
+    display: none;
+    flex-direction: column;
+    gap: var(--lx-gap);
+  
+    .carousel {
+      aspect-ratio: 4/3;
+      width: 100%;
+      height: 30vh;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+  
+      .item {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        transition: opacity 0.5s ease-in-out;
+  
+        img {
+          max-height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+  
+  
+        &.active {
+          opacity: 1;
+          display: block;
+        }
+      }
+    }
+  
+    .btn {
+      padding: 1em 2em;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 900;
+      color: #3f3f3f;
+      border: 2px solid;
+      border-radius: 20px;
+      background-color: #FFDDAD;
+      transition: transform 0.2s ease-in-out;
+  
+      &:active,
+      &:focus {
+        transform: translateY(-50%) scale(0.9);
+      }
+  
+      &:hover {
+        transform: translateY(-50%) scale(0.96);
+      }
+    }
+  
+    .prev {
+      left: -5%;
+    }
+  
+    .next {
+      right: -5%;
+    }
+  
+    
+  }
+  
+  .img_center {
+
+    
+    text-align: center;
+    display: none;
+  }
+  .img_center img {
+
+    max-width: 100%;
+  }
+  #canvas_div {
+    text-align: center;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+canvas {
+  border-radius: 12px;
+  background-color: #ffffff;
+  height: fit-content;
+  width: fit-content;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.row2 {
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column-left {
+  float: left;
+  width: 50%;
+  text-align: right;
+}
+
+.column-left img {
+
+  max-height: 20vh;
+  padding-right: 3vw;
+}
+
+.column-right {
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+
+.column-right img {
+
+  max-height: 20vh;
+  padding-left: 3vw;
+}
+  
+.panna{
+
+  max-width: 20%;
+  transition: transform 1.5s;
+
+}
+
+.panna-active{
+
+  transform: translate(70vw, 30vh) rotate(25deg);
+
+  
+}
+.panna2{
+
+  max-width: 30%;
+
+}
+
+.zangola {
+
+  max-height: 30vh;
+
+}
+
+.input{
+
+  text-align: center;
+  font-family: "Itim", cursive;
+  font-size: 1.5em;
+  background-color: #ffffff;
+  border: 2px solid;
+  color: #3F3F3F;
+  border-radius: 50px;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-top: 3vh;
+
+}
+
+.threecolumn {
+
+  float: left;
+  width: 33%;
+  text-align: center;
+
+}
+
+.threecolumn img {
+
+  max-width: 50%;
+  max-height: 50%;
+
+}
+
+.threecolumn2 {
+
+  float: left;
+  width: 33%;
+  text-align: center;
+  opacity: 0.5;
+
+}
+
+.threecolumn2 img {
+
+  max-width: 50%;
+  max-height: 50%;
+
+}
+
+.twocolumn {
+
+  float: left;
+  width: 50%;
+  text-align: center;
+
+}
+
+.twocolumn img {
+
+  max-width: 50%;
+  max-height: 50%;
+
+}
+#lastimg {
+  width: 20%;
+}
+
+#accendino{
+
+  max-width: 40%;
+  padding-top: 3vh;
+} 
+#caldera{
+  max-width:45%
+}
+
+  /*  to do */
+/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+@media only screen and (max-width: 600px) {
+  
+  canvas {
+
+    border-radius: 12px;
+    background-color: #ffffff;
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .panna{
+
+    max-width: 40%;
+    transition: transform 1.5s;
+  
+  }
+  .panna2{
+
+    max-width: 60%;
+  
+  }
+
+  p {
+
+    color:#3F3F3F;
+    text-align: center;
+    font-size: 1em;
+    padding-top: 10vh;
+    margin-left: 10vw;
+    margin-right: 10vw;;
+
+}
+
+button {
+
+  text-align: center;
+  font-family: "Itim", cursive;
+  font-size: 1.2em;
+  background-color: #FFDDAD;
+  border: 2px solid;
+  border-color: #3F3F3F;
+  border-radius: 50px;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+
+}
+h1 {
+
+  color: #F0AD4E;
+  text-align: center;
+  font-size: 2em;
+  padding-top: 25vh;
+
+}
+
+#window {
+
+  position: absolute;
+  top: 50%;
+  font-size: 1em;
+  text-align: center;
+  color: #3F3F3F;
+  background-color: #FFDDAD;
+  border-radius: 20px;
+  border: 2px solid;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+}
+
+.instruction {
+
+  font-size:1em;
+}
+.instruction2 {
+
+  font-size:1em;
+}
+
+.column{
+  width : 50%;
+}
+
+.column img{
+  height:20vh;
+}
+.column2{
+  width : 50%;
+}
+
+.threecolumn {
+
+  float: left;
+  width: 50%;
+  text-align: center;
+
+}
+
+.threecolumn img {
+
+  max-width: 50%;
+  max-height: 50%;
+
+}
+.threecolumn2 {
+
+  float: left;
+  width: 50%;
+  text-align: center;
+
+}
+
+.threecolumn2 img {
+
+  max-width: 50%;
+  max-height: 50%;
+
+}
+
+#lastimg {
+  width: 70%;
+}
+
+#accendino{
+
+  max-width: 60%;
+  padding-top: 3vh;
+} 
+#caldera{
+  max-width:60%
+}
+.twocolumn {
+
+  float: left;
+  width: 100%;
+  text-align: center;
+
+}
+
+.twocolumn img {
+
+  padding-top:3vh;
+  max-width: 40%;
+  max-height: 40%;
+
+}
+}
+

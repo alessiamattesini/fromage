@@ -409,7 +409,7 @@ canvas {
   max-width:45%
 }
 
-  /*  to do */
+
 /* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
 @media only screen and (max-width: 600px) {
   
@@ -438,7 +438,7 @@ canvas {
 
     color:#3F3F3F;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.1em;
     padding-top: 10vh;
     margin-left: 10vw;
     margin-right: 10vw;;
